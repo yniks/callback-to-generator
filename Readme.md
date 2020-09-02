@@ -30,5 +30,7 @@
 
 A function overloaded as a `async generator` via `[Symbol.asyncIterator]` annotation.
 
-## tags
-    event to generator, looping of events,  for events, sequnceing events
+## Tags
+    event to generator, looping of events,  for events, sequencing events
+    
+## :bookmark_tabs: Maintaned untill usable for ME
