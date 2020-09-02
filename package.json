@@ -1,0 +1,12 @@
+{
+  "name": "callback-to-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-repl-await"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
