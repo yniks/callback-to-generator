@@ -11,7 +11,7 @@
         streamline('tock');
     },1000)
     setTimeout(()=>{
-        eventGen(null);
+        streamline.finish()// or streamline(null);
         clearInterval(interval);
     },1000*10)
 
@@ -22,6 +22,7 @@
     }
 
     })()
+    //output:  will print `tick tock` after 1000 ms untill stream is finished by a timeout of 10 second
 
 ```
 
@@ -30,4 +31,4 @@
 A function overloaded as a `async generator` via `[Symbol.asyncIterator]` annotation.
 
 ## tags
-    event to 
+    event to generator, looping of events,  for events, sequnceing events
