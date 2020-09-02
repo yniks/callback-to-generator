@@ -2,7 +2,7 @@
 
 ### Usage:
 ```javascript
-//program: Lazy loop, clock tick Stream library
+//demonstration: Lazy loop, clock tick stream fed loop
 (async function(){
     const streamline=require('./')()
 
