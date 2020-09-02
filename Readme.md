@@ -4,11 +4,11 @@
 ```javascript
 //program: Lazy loop, clock tick Stream library
 (async function(){
-    const eventGen=require('./')()
+    const streamline=require('./')()
 
 
     var interval=setInterval(()=>{
-        eventGen('tock');
+        streamline('tock');
     },1000)
     setTimeout(()=>{
         eventGen(null);
@@ -16,9 +16,9 @@
     },1000*10)
 
     //demo
-    for await (let instance of eventGen)
+    for await (let event of streamline)
     {
-        console.log('tick',instance)
+        console.log('tick',event)
     }
 
     })()
@@ -28,3 +28,6 @@
 ## What is exported:
 
 A function overloaded as a `async generator` via `[Symbol.asyncIterator]` annotation.
+
+## tags
+    event to 
