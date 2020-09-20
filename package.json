@@ -5,10 +5,14 @@
   "main": "js/index.js",
   "types": "js/index.d.ts",
   "scripts": {
-    "repl": "node --experimental-repl-await --inspect=0.0.0.0"
+    "repl": "node --experimental-repl-await --inspect=0.0.0.0",
+    "docify": "typedoc --out docs  --theme node_modules/typedoc-clarity-theme/bin"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "typedoc-clarity-theme": "^1.1.0"
+  }
 }

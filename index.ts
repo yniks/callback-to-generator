@@ -1,49 +1,63 @@
 /**
- * An Overloaded function which is Also an AsyncGenerator.
+ * An Class which constructs an AsyncGenerator.
  * 
- * Calling this function pushes the passed argument in the buffer, which can be eventually
- * extracted via iterating this object via generator.Hence, CallBack to generator.
- * 
- * `Usage:` This Object can be used a call back to an listener and thenafter emitting 
- * events can be iterated over via this generator
+ * `Usage:` The object constructed via this class can be used as a call back to a listener . Emitted
+ * events can be iterated over using this object as a generator.
  * 
  */
-export function EventToGenerator()
+export class EventToGenerator
 {
-    
-    //AsyncGeneratorFunction
-    let buffer:any[]=[]
-    let pendingRequest:Function|undefined
-    function push(arg:any)
+    /**
+     * Determines whether to raise error if an attempt is made to push into an already ended stream.
+     * false implies to ignore silently
+     */
+    throwextra:boolean
+    constructor(throwextra:boolean=false)
     {
-        if(pendingRequest)
+        this.throwextra=throwextra
+        this.#buffer=[]
+        this.#pendingRequest=undefined
+    }
+    #buffer:any[]=[]
+    #pendingRequest:Function|undefined
+    /**
+    * Calling this function pushes the passed argument in the buffer, which can be eventually
+    * extracted via iterating this object as a generator.Hence, CallBack to generator.
+    * @param value value to be pushed into the stream, pushing `null` ends the stream
+    */
+    push(value:null|any)
+    {
+        if (value===null)//end of stream
+        {
+            //Cleanup to prevent memory leakage
+            this.push=()=>{if(this.throwextra)throw "Stream has ended!Illegal attempt to push"}
+            return
+        }
+        if(this.#pendingRequest)
         {
             /**
              * Copy pending request function and makeit null before calling it,
              * this is to prevent a case of infinite recursion, if this function happened to push by itself
              */
-            var copy=pendingRequest
-            pendingRequest=undefined
-            copy(arg)
+            var copy=this.#pendingRequest
+            this.#pendingRequest=undefined
+            copy(value)
         }
-        else buffer.push(arg)
+        else this.#buffer.push(value)
     }
-    async function* generator()//AsyncIterator
+    async *[Symbol.asyncIterator]()//AsyncIterator
     {
         var event;
         while(true)
         {
-            if (buffer.length>0) event= buffer.shift()
-            else event=await new Promise((res,rej)=>pendingRequest=res)
+            if (this.#buffer?.length>0) event= this.#buffer.shift()
+            else event=await new Promise((res,rej)=>this.#pendingRequest=res)
 
             if (event===null)//end of stream
                 {
-                    //TODO+FIXME:cleanup to prevent any memory leakage
                     break
                 }
             else yield event
         }
     }
-    push[Symbol.asyncIterator]=generator
-    return push
 }

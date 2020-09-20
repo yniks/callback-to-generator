@@ -1,15 +1,24 @@
 /**
- * An Overloaded function which is Also an AsyncGenerator.
+ * An Class which constructs an AsyncGenerator.
  *
- * Calling this function pushes the passed argument in the buffer, which can be eventually
- * extracted via iterating this object via generator.Hence, CallBack to generator.
- *
- * `Usage:` This Object can be used a call back to an listener and thenafter emitting
- * events can be iterated over via this generator
+ * `Usage:` The object constructed via this class can be used as a call back to a listener . Emitted
+ * events can be iterated over using this object as a generator.
  *
  */
-export declare function EventToGenerator(): {
-    (arg: any): void;
-    [Symbol.asyncIterator]: () => AsyncGenerator<any, void, unknown>;
-};
+export declare class EventToGenerator {
+    #private;
+    /**
+     * Determines whether to raise error if an attempt is made to push into an already ended stream.
+     * false implies to ignore silently
+     */
+    throwextra: boolean;
+    constructor(throwextra?: boolean);
+    /**
+    * Calling this function pushes the passed argument in the buffer, which can be eventually
+    * extracted via iterating this object as a generator.Hence, CallBack to generator.
+    * @param value value to be pushed into the stream, pushing `null` ends the stream
+    */
+    push(value: null | any): void;
+    [Symbol.asyncIterator](): AsyncGenerator<any, void, unknown>;
+}
 //# sourceMappingURL=index.d.ts.map
