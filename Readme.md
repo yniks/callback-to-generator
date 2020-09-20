@@ -12,6 +12,7 @@ async printer()
         console.log('tick',event)
     }
 }
+printer()
 var interval=setInterval(()=>{
         streamline('tock');
     },1000)
