@@ -5,7 +5,7 @@
  * events can be iterated over using this object as a generator.
  * 
  */
-export class EventToGenerator
+export class EventToGenerator implements AsyncIterable<any>
 {
     /**
      * Determines whether to raise error if an attempt is made to push into an already ended stream.
