@@ -5,21 +5,25 @@
  * events can be iterated over using this object as a generator.
  * 
  */
-export class EventToGenerator implements AsyncIterable<any>
+import {BaseFunction} from "inheritable-function-class"
+export class EventToGenerator extends BaseFunction  implements AsyncIterable<any> 
 {
     /**
      * Determines whether to raise error if an attempt is made to push into an already ended stream.
      * false implies to ignore silently
      */
     throwextra:boolean
+    #buffer:any[]=[]
+    #pendingRequest:Function|undefined
+    __call__:Function
     constructor(throwextra:boolean=false)
     {
+        super()
         this.throwextra=throwextra
         this.#buffer=[]
         this.#pendingRequest=undefined
+        this.__call__=this.push
     }
-    #buffer:any[]=[]
-    #pendingRequest:Function|undefined
     /**
     * Calling this function pushes the passed argument in the buffer, which can be eventually
     * extracted via iterating this object as a generator.Hence, CallBack to generator.
@@ -30,7 +34,7 @@ export class EventToGenerator implements AsyncIterable<any>
         if (value===null)//end of stream
         {
             //Cleanup to prevent memory leakage
-            this.push=()=>{if(this.throwextra)throw "Stream has ended!Illegal attempt to push"}
+            this.push=()=>{if(this.throwextra)throw "Stream has ended! Illegal attempt to push"}
             return
         }
         if(this.#pendingRequest)

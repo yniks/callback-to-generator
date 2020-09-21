@@ -5,13 +5,15 @@
  * events can be iterated over using this object as a generator.
  *
  */
-export declare class EventToGenerator {
+import { BaseFunction } from "inheritable-function-class";
+export declare class EventToGenerator extends BaseFunction implements AsyncIterable<any> {
     #private;
     /**
      * Determines whether to raise error if an attempt is made to push into an already ended stream.
      * false implies to ignore silently
      */
     throwextra: boolean;
+    __call__: Function;
     constructor(throwextra?: boolean);
     /**
     * Calling this function pushes the passed argument in the buffer, which can be eventually

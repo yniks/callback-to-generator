@@ -8,12 +8,15 @@ exports.EventToGenerator = void 0;
  * events can be iterated over using this object as a generator.
  *
  */
-class EventToGenerator {
+const inheritable_function_class_1 = require("inheritable-function-class");
+class EventToGenerator extends inheritable_function_class_1.BaseFunction {
     constructor(throwextra = false) {
+        super();
         this.#buffer = [];
         this.throwextra = throwextra;
         this.#buffer = [];
         this.#pendingRequest = undefined;
+        this.__call__ = this.push;
     }
     #buffer;
     #pendingRequest;
@@ -27,7 +30,7 @@ class EventToGenerator {
          {
             //Cleanup to prevent memory leakage
             this.push = () => { if (this.throwextra)
-                throw "Stream has ended!Illegal attempt to push"; };
+                throw "Stream has ended! Illegal attempt to push"; };
             return;
         }
         if (this.#pendingRequest) {

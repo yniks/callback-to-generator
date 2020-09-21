@@ -915,7 +915,7 @@ img { max-width: 100%; }
 		<li class="current tsd-kind-class tsd-parent-kind-module">
 			<a href="_index_.eventtogenerator.html" class="tsd-kind-icon">Event<wbr>ToGenerator</a>
 			<ul>
-				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+				<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a href="_index_.eventtogenerator.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
@@ -924,14 +924,41 @@ img { max-width: 100%; }
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a href="_index_.eventtogenerator.html#_pendingrequest" class="tsd-kind-icon">#pending<wbr>Request</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+					<a href="_index_.eventtogenerator.html#__call__" class="tsd-kind-icon">__call__</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#arguments" class="tsd-kind-icon">arguments</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#caller" class="tsd-kind-icon">caller</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#length" class="tsd-kind-icon">length</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#prototype" class="tsd-kind-icon">prototype</a>
+				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="_index_.eventtogenerator.html#throwextra" class="tsd-kind-icon">throwextra</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="_index_.eventtogenerator.html#_symbol_asynciterator_" class="tsd-kind-icon">[<wbr>Symbol.async<wbr>Iterator]</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#apply" class="tsd-kind-icon">apply</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#bind" class="tsd-kind-icon">bind</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#call" class="tsd-kind-icon">call</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="_index_.eventtogenerator.html#push" class="tsd-kind-icon">push</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a href="_index_.eventtogenerator.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
 				</li>
 			</ul>
 		</li>
@@ -939,21 +966,23 @@ img { max-width: 100%; }
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
-		<section class="tsd-panel tsd-comment">
-			<div class="tsd-comment tsd-typography">
-				<div class="lead">
-					<p>An Class which constructs an AsyncGenerator.</p>
-				</div>
-				<p><code>Usage:</code> The object constructed via this class can be used as a call back to a listener . Emitted
-				events can be iterated over using this object as a generator.</p>
-			</div>
-		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">EventToGenerator</span>
+					<span class="tsd-signature-type">BaseFunction</span>
+					<ul class="tsd-hierarchy">
+						<li>
+							<span class="target">EventToGenerator</span>
+						</li>
+					</ul>
 				</li>
+			</ul>
+		</section>
+		<section class="tsd-panel">
+			<h3>Implements</h3>
+			<ul class="tsd-hierarchy">
+				<li><span class="tsd-signature-type">AsyncIterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 			</ul>
 		</section>
 		<section class="tsd-panel-group tsd-index-group">
@@ -963,7 +992,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_index_.eventtogenerator.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_index_.eventtogenerator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -971,6 +1000,11 @@ img { max-width: 100%; }
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_index_.eventtogenerator.html#_buffer" class="tsd-kind-icon">#buffer</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_index_.eventtogenerator.html#_pendingrequest" class="tsd-kind-icon">#pending<wbr>Request</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="_index_.eventtogenerator.html#__call__" class="tsd-kind-icon">__call__</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_index_.eventtogenerator.html#arguments" class="tsd-kind-icon">arguments</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_index_.eventtogenerator.html#caller" class="tsd-kind-icon">caller</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_index_.eventtogenerator.html#length" class="tsd-kind-icon">length</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_index_.eventtogenerator.html#prototype" class="tsd-kind-icon">prototype</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="_index_.eventtogenerator.html#throwextra" class="tsd-kind-icon">throwextra</a></li>
 						</ul>
 					</section>
@@ -978,7 +1012,11 @@ img { max-width: 100%; }
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_.eventtogenerator.html#_symbol_asynciterator_" class="tsd-kind-icon">[<wbr>Symbol.async<wbr>Iterator]</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_index_.eventtogenerator.html#apply" class="tsd-kind-icon">apply</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_index_.eventtogenerator.html#bind" class="tsd-kind-icon">bind</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_index_.eventtogenerator.html#call" class="tsd-kind-icon">call</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="_index_.eventtogenerator.html#push" class="tsd-kind-icon">push</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_index_.eventtogenerator.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 						</ul>
 					</section>
 				</div>
@@ -986,23 +1024,24 @@ img { max-width: 100%; }
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Constructors</h2>
-			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
-				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>ToGenerator<span class="tsd-signature-symbol">(</span>throwextra<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_.eventtogenerator.html" class="tsd-signature-type">EventToGenerator</a></li>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Event<wbr>ToGenerator<span class="tsd-signature-symbol">(</span>throwextra<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_index_.eventtogenerator.html" class="tsd-signature-type">EventToGenerator</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
+							<p>Overrides BaseFunction.__constructor</p>
 							<ul>
-								<li>Defined in index.ts:14</li>
+								<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:18</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>throwextra: <span class="tsd-signature-type">boolean</span></h5>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> throwextra: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="_index_.eventtogenerator.html" class="tsd-signature-type">EventToGenerator</a></h4>
@@ -1018,7 +1057,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">#buffer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any[]</span><span class="tsd-signature-symbol"> = []</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in index.ts:19</li>
+						<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:16</li>
 					</ul>
 				</aside>
 			</section>
@@ -1028,17 +1067,28 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">#pending<wbr>Request<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in index.ts:20</li>
+						<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:17</li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
+				<a name="__call__" class="tsd-anchor"></a>
+				<h3>__call__</h3>
+				<div class="tsd-signature tsd-kind-icon">__call__<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
+				<aside class="tsd-sources">
+					<p>Overrides BaseFunction.__call__</p>
+					<ul>
+						<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:18</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="throwextra" class="tsd-anchor"></a>
 				<h3>throwextra</h3>
-				<div class="tsd-signature tsd-kind-icon">throwextra<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+				<div class="tsd-signature tsd-kind-icon">throwextra<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in index.ts:14</li>
+						<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:15</li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1061,7 +1111,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in index.ts:40</li>
+								<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:52</li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1078,7 +1128,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in index.ts:26</li>
+								<li>Defined in mnt/c/Users/Shail/code/callback-to-generator/index.ts:32</li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">

@@ -924,26 +924,25 @@ img { max-width: 100%; }
 				<h3>Usage:</h3>
 			</a>
 			<pre><code class="language-javascript"><span class="hljs-comment">//demonstration: Lazy loop, clock tick stream fed loop</span>
-(<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">const</span> streamline=<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./&#x27;</span>)()
 
-
-    <span class="hljs-keyword">var</span> interval=<span class="hljs-built_in">setInterval</span>(<span class="hljs-function">()=&gt;</span>{
-        streamline(<span class="hljs-string">&#x27;tock&#x27;</span>);
-    },<span class="hljs-number">1000</span>)
-    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>{
-        streamline.finish()<span class="hljs-comment">// or streamline(null);</span>
-        <span class="hljs-built_in">clearInterval</span>(interval);
-    },<span class="hljs-number">1000</span>*<span class="hljs-number">10</span>)
-
-    <span class="hljs-comment">//demo</span>
+<span class="hljs-keyword">const</span> streamline=<span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./&#x27;</span>)()
+<span class="hljs-keyword">async</span> printer()
+{
     <span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">let</span> event <span class="hljs-keyword">of</span> streamline)
     {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;tick&#x27;</span>,event)
     }
+}
+printer()
+<span class="hljs-keyword">var</span> interval=<span class="hljs-built_in">setInterval</span>(<span class="hljs-function">()=&gt;</span>{
+        streamline(<span class="hljs-string">&#x27;tock&#x27;</span>);
+    },<span class="hljs-number">1000</span>)
+<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>{
+    streamline(<span class="hljs-literal">null</span>)
+    <span class="hljs-built_in">clearInterval</span>(interval);
+},<span class="hljs-number">1000</span>*<span class="hljs-number">10</span>)
 
-    })()
-    <span class="hljs-comment">//output:  will print `tick tock` after 1000 ms untill stream is finished by a timeout of 10 second</span>
+<span class="hljs-comment">//output:  will print `tick tock` after 1000 ms untill stream is finished by a timeout of 10 second</span>
 </code></pre>
 			<a href="#what-is-exported" id="what-is-exported" style="color: inherit; text-decoration: none;">
 				<h2>What is exported:</h2>

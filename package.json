@@ -11,7 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "inheritable-function-class": "git+ssh://git@github.com/yniks/Inheritable-Function-Class.git"
+  },
   "devDependencies": {
     "typedoc-clarity-theme": "^1.1.0"
   }
