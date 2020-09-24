@@ -35,7 +35,6 @@ export class EventToGenerator extends BaseFunction  implements AsyncIterable<any
         {
             //Cleanup to prevent memory leakage
             this.push=()=>{if(this.throwextra)throw "Stream has ended! Illegal attempt to push"}
-            return
         }
         if(this.#pendingRequest)
         {

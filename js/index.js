@@ -31,7 +31,6 @@ class EventToGenerator extends inheritable_function_class_1.BaseFunction {
             //Cleanup to prevent memory leakage
             this.push = () => { if (this.throwextra)
                 throw "Stream has ended! Illegal attempt to push"; };
-            return;
         }
         if (this.#pendingRequest) {
             /**
